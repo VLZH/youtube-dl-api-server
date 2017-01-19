@@ -29,6 +29,7 @@ def get_videos(url, extra_params):
         'format': 'best',
         'cachedir': False,
         'logger': current_app.logger.getChild('youtube-dl'),
+        'verbose': True
     }
     ydl_params.update(extra_params)
     ydl = SimpleYDL(ydl_params)
@@ -123,6 +124,8 @@ ALLOWED_EXTRA_PARAMS = {
     'allsubtitles': bool,
     'subtitlesformat': str,
     'subtitleslangs': list,
+    'username': str,
+    'password': str
 }
 
 
